@@ -7,6 +7,7 @@ $(".drag").draggable({
     opacity: 0.75,
     stack: ".drag",
     axis: "x",
+    containment: "parent",
     stop: function(e, ui){
          selectBox($(this));  
     }
