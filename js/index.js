@@ -34,7 +34,7 @@ function selectBox(element){
   let circ1Position = $('#circle1').position();
   let circ2Position = $('#circle2').position();
 
-  if(circ2Position.left - circ1Position.left < 125) {
+  if(circ2Position.left - circ1Position.left < 200) {
     alert ('trigger model')
   }  
 }
