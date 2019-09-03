@@ -1,4 +1,14 @@
 $(document).ready(function() {
+    let videoTag = document.getElementById('myVideo');
+    $('#myVideo').hide();
+    $('#finalImg').hide();
+    videoTag.addEventListener('ended',myHandler,false);
+    function myHandler(e) {
+       console.log('video completed');
+       $('#finalImg').show();
+       $('#finalImg').animate({height: "100%"});
+    }
+
     if($("#container").css("zoom") === undefined){
         $("#container").addClass("noZoom");
     }
@@ -35,7 +45,10 @@ function selectBox(element){
   let circ2Position = $('#circle2').position();
 
   if(circ2Position.left - circ1Position.left < 200) {
-    alert ('trigger model')
+    $('#myVideo').show();
+    $('#circle1').hide();
+    $('#circle2').hide();
+    $('#myVideo').trigger('play');
   }  
 }
 });
