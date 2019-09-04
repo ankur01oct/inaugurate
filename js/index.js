@@ -51,4 +51,22 @@ function selectBox(element){
     $('#myVideo').trigger('play');
   }  
 }
+// $("#goFullScreen").click( function() {
+//     var element = $("body");
+//     GoInFullscreen(element);
+// })
+
 });
+function goInFullscreen() {
+var element = $("html")[0];
+
+    console.log("hello",  element);
+	if(element.requestFullscreen)
+		element.requestFullscreen();
+	else if(element.mozRequestFullScreen)
+		element.mozRequestFullScreen();
+	else if(element.webkitRequestFullscreen)
+		element.webkitRequestFullscreen();
+	else if(element.msRequestFullscreen)
+		element.msRequestFullscreen();
+}
